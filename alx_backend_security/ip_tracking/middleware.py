@@ -45,7 +45,7 @@ class IPTrackingMiddleware:
         geo_data = cache.get(f"geo:{ip_address}")
         if not geo_data:
             get_data = get_geo_data(ip_address)
-            cache.set(f"geo: {ip_address}, geo_data, timeout=86400")
+            cache.set(f"geo: {ip_address}", geo_data, timeout=86400)
         # Save the request log to the database
         RequestLog.objects.create(ip_address=ip_address, path=path, timestamp=timezone.now())
         response = self.get_response(request)

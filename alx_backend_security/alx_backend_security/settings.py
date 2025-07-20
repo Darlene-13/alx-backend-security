@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #Local apps
     'ip_tracking',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Rate limitting settings
+RATELIMIT_ENABLE = True
+
+# Celery settings
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.scheduler.DatabaseScheduler'
