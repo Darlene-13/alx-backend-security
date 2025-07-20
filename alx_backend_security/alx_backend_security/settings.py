@@ -129,4 +129,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 RATELIMIT_ENABLE = True
 
 # Celery settings
-CELERY_BEAT_SCHEDULER = 'django_celery_beat.scheduler.DatabaseScheduler'
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+CELERY_TIMEZONE = 'UTC'
